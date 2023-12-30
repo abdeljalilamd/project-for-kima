@@ -77,3 +77,4 @@ npm run dev
 >             'phoneNumber' => $request->phoneNumber,
 >             'password' => Hash::make($request->password),
 >         ]);
+

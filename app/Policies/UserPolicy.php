@@ -20,7 +20,8 @@ class UserPolicy
      */
     public function view(User $user, User $model): bool
     {
-        return $user->hasPermissionTo('Read User');
+        // return $user->hasPermissionTo('Read User');
+        return true;
     }
 
     /**
@@ -28,7 +29,8 @@ class UserPolicy
      */
     public function create(User $user): bool
     {
-        return $user->hasPermissionTo('Create User');
+        // return $user->hasPermissionTo('Create User');
+        return true;
     }
 
     /**
