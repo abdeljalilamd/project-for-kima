@@ -1,28 +1,28 @@
 ## Step Create this Project
 
-# make new project Laravel
+- make new project Laravel
 ```sh
 Laravel New OnWayProject
 ```
 
 - Connect Database with .env file
-# make Migration test
+- make Migration test
 ```sh
 php artisan migrate
 ```
 
 - Add files migration from old project
-# make migration : Drop All tables and create all tables
+- make migration : Drop All tables and create all tables
 ```sh
 php artisan migrate:fresh
 ```
 
-# make model for all tables
+- make model for all tables
 ```sh
 php artisan make:model Chat
 ```
 
-# install breeze using this link https://laravel.com/docs/10.x/starter-kits
+- install breeze using this link https://laravel.com/docs/10.x/starter-kits
 ```sh
 composer require laravel/breeze --dev
 php artisan breeze:install
@@ -40,7 +40,7 @@ npm run dev
 .
 
 
-# add column Role & PhoneNumber in Resources -> Views -> Auth -> register.blade.php
+- add column Role & PhoneNumber in Resources -> Views -> Auth -> register.blade.php
 
 >       <!-- Phone Number -->
 >         <div class="mt-4">
@@ -59,7 +59,7 @@ npm run dev
 >             <x-input-error :messages="$errors->get('role')" class="mt-2" />
 >         </div>
 
-# Edit Store function in RegisteredUserController
+- Edit Store function in RegisteredUserController
 >         $request->validate([
 >             'name' => ['required', 'string', 'max:255'],
 >             'phoneNumber' => ['required', 'string', 'max:255'],
