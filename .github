@@ -1,3 +1,3 @@
  git add .
- git commit -m "add role & phoneNumber to register form and controler auth"
+ git commit -m "Add Roles and Permission"
  git push -u origin OnWay
