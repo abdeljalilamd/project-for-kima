@@ -13,6 +13,10 @@ use App\Http\Requests\StoreUserRequest;
 
 class RegisterOnwayController extends Controller
 {
+    public function index()
+    {
+        return view('pages.register');    
+    }
     public function register(StoreUserRequest $request): RedirectResponse
     {
         $validation = $request->validated();

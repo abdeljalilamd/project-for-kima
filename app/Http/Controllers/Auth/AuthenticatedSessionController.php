@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
-use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -26,28 +25,12 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request): RedirectResponse
     {
-        // dd($request->email);
-        
+
         $request->authenticate();
 
         $request->session()->regenerate();
 
-        $user = User::where('email',$request->email)->first();
-
-        //dd($user->role);
-
-        if($user->role == "recruiter")
-        {
-            return redirect()->route('pages.employer');
-        }
-        elseif($user->role == "jobSeeker"){
-            return redirect()->route('pages.career');
-        }
-        else{
-
-            return redirect()->intended(RouteServiceProvider::HOME);
-        }
-
+        return redirect()->intended(RouteServiceProvider::HOME);
     }
 
     /**
