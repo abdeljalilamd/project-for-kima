@@ -1,0 +1,3 @@
+ git add .
+ git commit -m "add views login and register jobseeker"
+ git push -u origin OnWay
