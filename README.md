@@ -78,3 +78,18 @@ npm run dev
 >             'password' => Hash::make($request->password),
 >         ]);
 
+
+
+
+
+Route::resource('/dashboard/recruiter', RecruiterController::class)->middleware(['auth', 'verified']);
+
+=
+
+Route::get('/dashboard/recruiter/', [RecruiterController::class,'index'])->middleware(['auth', 'verified']);
+Route::get('/dashboard/recruiter/', [RecruiterController::class,'show'])->middleware(['auth', 'verified']);
+Route::get('/dashboard/recruiter/', [RecruiterController::class,'create'])->middleware(['auth', 'verified']);
+Route::post('/dashboard/recruiter/', [RecruiterController::class,'store'])->middleware(['auth', 'verified']);
+Route::get('/dashboard/recruiter/', [RecruiterController::class,'edit'])->middleware(['auth', 'verified']);
+Route::post('/dashboard/recruiter/', [RecruiterController::class,'update'])->middleware(['auth', 'verified']);
+Route::get('/dashboard/recruiter/', [RecruiterController::class,'destroy'])->middleware(['auth', 'verified']);
