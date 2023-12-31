@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('reacts', function (Blueprint $table) {
             $table->id();
-            $table->foreignUuid('post_id')->references('post_id')->on('posts');
-            $table->foreignUuid('user_id')->references('id')->on('users');
+            $table->foreignId('post_id')->references('post_id')->on('posts');
+            $table->foreignId('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

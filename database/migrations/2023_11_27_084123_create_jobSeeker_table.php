@@ -13,7 +13,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('job_seekers', function (Blueprint $table) {
-            $table->uuid('seeker_id')->primary(); // identify seekers id
+            $table->id('seeker_id'); // identify seekers id
             $table->string('title'); // Position Name
             $table->date('dateBirthday');
             $table->string('EducationLevel');
@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('cv');
             $table->json('languages')->default(new Expression('(JSON_ARRAY())'));
             $table->string('linkedinLink');
-            $table->foreignUuid('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

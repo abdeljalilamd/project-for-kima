@@ -23,10 +23,10 @@ class DatabaseSeeder extends Seeder
             // OfferSeeder::class,
             // PostulateSeeder::class,
 
-            
-            PermissionSeeder::class,
             AdminSeeder::class,
-            RoleSeeder::class,
+            PermissionSeeder::class,
+            
+            // RoleSeeder::class,
 
         ]);
 

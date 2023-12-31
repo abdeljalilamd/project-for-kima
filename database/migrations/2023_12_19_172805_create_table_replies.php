@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('replies', function (Blueprint $table) {
             $table->id();
             $table->text('content');
-            $table->foreignUuid('comment_id')->references('comment_id')->on('comments');
+            $table->foreignId('comment_id')->references('comment_id')->on('comments');
             $table->timestamps();
         });
     }

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
 use App\Models\Post;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -27,10 +29,21 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorePostRequest $request)
+    public function store(Request $request)
     {
-        //
+        
+        if ($request->hasFile('image')) {
+            $request['image'] = $request->file('image')->store('public');
+        };
+        Post::create([
+            "title" => $request->title,
+            "description" => $request->description,
+            "image" => $request['image'],
+            'user_id' => Auth::user()->id,
+        ]);
+        return redirect()->back();
     }
+   
 
     /**
      * Display the specified resource.

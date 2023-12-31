@@ -13,7 +13,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('offers', function (Blueprint $table) {
-            $table->uuid('offer_id')->primary();
+            $table->id('offer_id');
             $table->string('title');
             $table->text('description');
             $table->string('location');
@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('EducationLevel');
             $table->string('typeContract');
             $table->double('salary', 10, 2);
-            $table->foreignUuid('recruiter_id')->references('recruiter_id')->on('recruiters');
+            $table->foreignId('recruiter_id')->references('recruiter_id')->on('recruiters');
             $table->timestamps(); // date == created_at
         });
     }

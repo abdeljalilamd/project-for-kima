@@ -23,10 +23,10 @@ use App\Http\Controllers\RegisterOnwayController;
 
 
 // Dashbord OnWay
-Route::resource('/dashboard/recruiter', RecruiterController::class)->middleware(['auth', 'verified']);
-Route::resource('/dashboard/jobseeker', JobSeekerController::class)->middleware(['auth', 'verified']);
-Route::resource('/dashboard/offer', OfferController::class)->middleware(['auth', 'verified']);
-Route::resource('/dashboard/post', PostController::class)->middleware(['auth', 'verified']);
+Route::resource('/dashboard/recruiter', RecruiterController::class)->middleware(['auth', 'role:admin']);
+Route::resource('/dashboard/jobseeker', JobSeekerController::class)->middleware(['auth', 'role:admin']);
+Route::resource('/dashboard/offer', OfferController::class)->middleware(['auth', 'role:admin']);
+Route::resource('/dashboard/post', PostController::class)->middleware(['auth', 'role:admin']);
 // End Dashboard OnWay
 
 
@@ -38,7 +38,7 @@ Route::post("/registeronway", [RegisterOnwayController::class,"register"])->name
 
 Route::get('/dashboard', function () { return view('dashboard'); })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/career', function () { return view('pages.career'); })->middleware(['auth', 'verified'])->name('pages.career');
+Route::get('/comunity', function () { return view('pages.comunity'); })->middleware(['auth', 'verified'])->name('pages.comunity');
 Route::get('/employer', function () { return view('pages.employer'); })->middleware(['auth', 'verified'])->name('pages.employer');
 
 Route::middleware('auth')->group(function () {

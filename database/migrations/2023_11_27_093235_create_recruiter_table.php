@@ -12,14 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('recruiters', function (Blueprint $table) {
-            $table->uuid('recruiter_id')->primary(); // identify recruiters id
+            $table->id('recruiter_id'); // identify recruiters id
             $table->string('industry', 60);
             $table->string('companyName', 60)->nullable();
             $table->string('companySize', 60)->nullable();
             $table->text('companyWebsite')->nullable();
             $table->text('aboutCompany');
             $table->string('companyOverview'); // i define it as a string because it will come as a file
-            $table->foreignUuid('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

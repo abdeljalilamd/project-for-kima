@@ -18,35 +18,25 @@
                 
                         <!-- Name -->
                         <div>
-                            <x-input-label for="name" :value="__('Title')" />
-                            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-                            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+                            <x-input-label for="title" :value="__('Title')" />
+                            <x-text-input id="title" class="block mt-1 w-full" type="text" name="title" :value="old('title')" required autofocus autocomplete="title" />
+                            <x-input-error :messages="$errors->get('title')" class="mt-2" />
                         </div>
                 
                         <!-- Email Address -->
                         <div class="mt-4">
-                            <x-input-label for="email" :value="__('Text')" />
-                            <textarea id="email" class=" border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username"></textarea>
-                            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                            <x-input-label for="description" :value="__('description')" />
+                            <textarea id="description" class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm block mt-1 w-full" type="text" name="description" :value="old('description')" required autocomplete="description"></textarea>
+                            <x-input-error :messages="$errors->get('description')" class="mt-2" />
                         </div>
 
                         <!-- Email Address -->
                         <div class="mt-4">
-                            <x-input-label for="email" :value="__('Image')" />
-                            <input id="image" class=" border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm block mt-1 w-full" type="file" name="email" :value="old('email')" required autocomplete="username"></input>
-                            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                            <x-input-label for="image" :value="__('Image')" />
+                            <input id="image" class=" border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm block mt-1 w-full" type="file" name="image" :value="old('image')" required autocomplete="image" />
+                            <x-input-error :messages="$errors->get('image')" class="mt-2" />
                         </div>
                 
-                
-                        <!-- Role -->
-                        <div class="mt-4">
-                            <x-input-label for="role" :value="__('Post Status')" />
-                            <select name="role" class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm block mt-1 w-full" id="role">
-                                <option value="jobSeeker">Pending</option>
-                                <option value="recruiter">Published</option>
-                              </select>
-                            <x-input-error :messages="$errors->get('role')" class="mt-2" />
-                        </div>
                 
                 
                         <div class="flex items-center justify-end mt-4">

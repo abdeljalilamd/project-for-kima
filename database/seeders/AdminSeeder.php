@@ -18,17 +18,12 @@ class AdminSeeder extends Seeder
     public function run(): void
     {
         $user = User::create([
-            "id" => Str::uuid(),
             'name' => "Hakima Elhani",
             'location' => 'Morocco, Tetouan',
-            'role' => Role::where('name',"admin")->first(),
+            'role' => "admin",
             'email' => "hakima@gmail.com",
             'phoneNumber' => '0998989889',
             'password' => Hash::make("password"),
         ]);
-
-        
-
-
     }
 }

@@ -13,11 +13,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('posts', function (Blueprint $table) {
-            $table->uuid('post_id')->primary();
+            $table->id('post_id');
             $table->string('title');
-            $table->json('file')->nullable()->default(new Expression('(JSON_ARRAY())'));
+            $table->string('image')->nullable();
             $table->text('description');
-            $table->foreignUuid('user_id')->references('id')->on('users');
+            $table->foreignId('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

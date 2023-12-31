@@ -13,12 +13,10 @@ return new class extends Migration
     {
         Schema::create('chats', function (Blueprint $table) {
             $table->id();
-            $table->uuid('sender');
-            $table->uuid('receiver');
             $table->text('message');
             $table->timestamps();
-            $table->foreign('sender')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('receiver')->references('id')->on('users')->onDelete('cascade');
+            $table->foreignId('sender')->references('id')->on('users')->onDelete('cascade');
+            $table->foreignId('receiver')->references('id')->on('users')->onDelete('cascade');
 
         });
     }

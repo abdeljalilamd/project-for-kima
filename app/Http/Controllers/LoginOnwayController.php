@@ -17,15 +17,12 @@ class LoginOnwayController extends Controller
 
     public function Login(LoginRequest $request): RedirectResponse
     {
-        //  dd($request);
         
         $request->authenticate();
 
         $request->session()->regenerate();
 
         $user = User::where('email',$request->email)->first();
-
-        //dd($user->role);
 
         if($user->role == "recruiter")
         {

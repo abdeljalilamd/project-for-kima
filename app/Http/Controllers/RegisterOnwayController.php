@@ -22,7 +22,7 @@ class RegisterOnwayController extends Controller
         $validation = $request->validated();
             // dd($validation["role"]);
         $user = User::create([
-            "id" => Str::uuid(),
+            // "id" => Str::uuid(),
             'name' => $validation["name"],
             'location' => 'Morocco, Casablanca',
             'role' => $validation["role"],
