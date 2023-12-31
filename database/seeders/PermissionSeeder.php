@@ -53,7 +53,7 @@ class PermissionSeeder extends Seeder
                 Permission::create(['name' => 'Destroy List Recruiters']);
 
         # Table Offer
-        $jobSeekerPermissions = Permission::create(['name' => 'Read List Offers']);
+        $recruiterPermissions = $jobSeekerPermissions = Permission::create(['name' => 'Read List Offers']);
                 Permission::create(['name' => 'Read Offer']);
                 Permission::create(['name' => 'Create Offer']);
                 Permission::create(['name' => 'Edit Offer']);

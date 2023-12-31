@@ -14,6 +14,8 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
     use HasRoles;
 
+    protected $keyType = 'string';
+    public $incrementing = false;
     /**
      * The attributes that are mass assignable.
      *
@@ -28,7 +30,6 @@ class User extends Authenticatable
         'role',
         'location',
         'phoneNumber',
-        'status',
     ];
 
     /**
@@ -50,4 +51,31 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function jobSeeker()
+    {
+        return $this->hasOne(JobSeeker::class);
+    }
+
+    public function recruiter()
+    {
+        return $this->hasOne(Recruiter::class);
+    }
+    public function admin()
+    {
+        return $this->hasOne(Admin::class);
+    }
+
+    public function isAdmin() {
+        return $this->role === 'admin';
+    }
+
+
+    public function comments() {
+        return $this->hasMany(Comment::class);
+    }
+
+    public function reacts() {
+        return $this->hasMany(React::class);
+    }
 }

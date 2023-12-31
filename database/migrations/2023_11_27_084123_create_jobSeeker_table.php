@@ -16,7 +16,7 @@ return new class extends Migration
             $table->uuid('seeker_id')->primary(); // identify seekers id
             $table->string('title'); // Position Name
             $table->date('dateBirthday');
-            $table->enum('EducationLevel', ['bac+1', 'bac+2','bac+3','bac+4','bac+5']);
+            $table->string('EducationLevel');
             $table->text('educationDescription');
             $table->string('experience');
             $table->text('experienceDescription');

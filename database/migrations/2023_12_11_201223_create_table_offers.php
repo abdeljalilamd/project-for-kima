@@ -20,7 +20,7 @@ return new class extends Migration
             $table->json('competences')->nullable()->default(new Expression('(JSON_ARRAY())'));
             $table->json('languages')->default(new Expression('(JSON_ARRAY())'));
             $table->year('experienceYear');
-            $table->enum('EducationLevel', ['bac+1', 'bac+2','bac+3','bac+4','bac+5']);
+            $table->string('EducationLevel');
             $table->string('typeContract');
             $table->double('salary', 10, 2);
             $table->foreignUuid('recruiter_id')->references('recruiter_id')->on('recruiters');
